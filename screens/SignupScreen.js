@@ -16,8 +16,8 @@ const SignupScreen = () => {
       authCtx.authenticate(token);
     } catch (error) {
       Alert.alert("Sign up failed, Try again");
+      setIsAuthenticating(false);
     }
-    setIsAuthenticating(false);
   };
   if (isAuthenticating) {
     return <LoadingOverlay message="createing user..." />;
